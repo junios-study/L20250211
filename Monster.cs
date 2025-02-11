@@ -18,8 +18,20 @@ namespace L20250211
             Console.WriteLine("몬스터 소멸자");
         }
 
-        public int hp;
-        public int gold;
+        protected int hp;
+        protected int gold;
+
+        public void ApplyDamage(int damage)
+        {
+            if (hp < 0)
+            {
+                Die();
+            }
+            else
+            {
+                hp -= damage;
+            }
+        }
 
         public void Attack()
         {
@@ -32,7 +44,7 @@ namespace L20250211
         }
 
         //virtual function table
-        public void Move()
+        public virtual void Move()
         {
             Console.WriteLine("몬스터 걷는다.");
         }
