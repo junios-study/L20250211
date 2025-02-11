@@ -6,20 +6,52 @@ using System.Threading.Tasks;
 
 namespace L20250211
 {
-    public class Monster
+    public class Monster : Character
     {
         public Monster()
         {
             Console.WriteLine("몬스터 생성자");
         }
 
-        ~Monster() 
+        ~Monster()
         {
             Console.WriteLine("몬스터 소멸자");
         }
 
-        protected int hp;
-        protected int gold;
+        //protected int hp;
+        //public int Hp
+        //{
+        //    get
+        //    { 
+        //        return hp;
+        //    }
+        //    set
+        //    { 
+        //        hp = value;
+        //    }
+        //}
+
+        public int hp
+        {
+            get;
+            set;
+        }
+
+        public int gold;
+
+        //public int GetHP()
+        //{
+        //    return hp;
+        //}
+
+        //public void SetHP(int value)
+        //{
+        //    if (value >= 0)
+        //    {
+        //        hp = value;
+        //    }
+        //}
+
 
         public void ApplyDamage(int damage)
         {

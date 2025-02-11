@@ -6,27 +6,8 @@ using System.Threading.Tasks;
 
 namespace L20250211
 {
-    public class Player : Character
+    public class Character
     {
-        public Player()
-        {
-            hp = 100;
-            gold = -10;
-            Console.WriteLine("플레이어 생성자");
-        }
-
-        public Player(int hp, int gold)
-        {
-            this.hp = hp;
-            this.gold = gold;
-        }
-
-        ~Player()
-        {
-            //Network, DB 종료
-            Console.WriteLine("플레이어 소멸자");
-        }
-
         public void Attack()
         {
 
@@ -50,6 +31,5 @@ namespace L20250211
 
         public int hp;
         public int gold;
-
     }
 }
