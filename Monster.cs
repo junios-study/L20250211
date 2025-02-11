@@ -21,18 +21,18 @@ namespace L20250211
         public int hp;
         public int gold;
 
-        public virtual  void Attack()
+        public void Attack()
         {
-
+            Console.WriteLine("공격한다.");
         }
 
-        public virtual void Die()
+        public void Die()
         {
 
         }
 
         //virtual function table
-        public virtual void Move()
+        public void Move()
         {
             Console.WriteLine("몬스터 걷는다.");
         }
