@@ -4,57 +4,48 @@ namespace L20250211
 {
     public class Program
     {
+        public class GameObject
+        {
+            public virtual void Render()
+            {
+
+            }
+        }
+
+        public class Cube : GameObject
+        {
+        }
+
+        public class Box : GameObject
+        {
+            public override void Render()
+            {
+
+            }
+        }
+
+
+
         static void Main(string[] args)
         {
-            Player player = new Player();
+            Monster[] monsters = new Monster[2];
+            monsters[0] = new Goblin();
+            monsters[1] = new Boar();
+        
 
-            Random rand = new Random();
+            //다형성, virtual , override
+            monsters[0].Move();
+            monsters[1].Move();
 
-            int goblinCount = rand.Next(1, 3);
-            Goblin[] goblins = new Goblin[goblinCount];
-            for (int i = 0; i < goblins.Length; i++)
+            GameObject[] gameObjects = new GameObject[2];
+            gameObjects[0] = new Cube();
+            gameObjects[1] = new Box();
+
+            //Render All
+            for (int i = 0; i < gameObjects.Length; i++)
             {
-                goblins[i] = new Goblin();
-            }
-
-
-            int slimeCount = rand.Next(1, 5);
-            Slime[] slimes = new Slime[slimeCount];
-            for (int i = 0; i < slimes.Length; i++)
-            {
-                slimes[i] = new Slime();
-            }
-
-            int boarCount = rand.Next(1, 3);
-            Boar[] boars = new Boar[boarCount];
-            for (int i = 0; i < boars.Length; i++)
-            {
-                boars[i] = new Boar();
-            }
-
-            while (true)
-            {
-                //Input();
-                Console.ReadKey();
-                Console.Clear();
-
-                //Update();
-                player.Move();
-                for (int i = 0; i < goblins.Length; i++)
-                {
-                    goblins[i].Move();
-                }
-                for (int i = 0; i < slimes.Length; i++)
-                {
-                    slimes[i].Move();
-                }
-                for (int i = 0; i < boars.Length; i++)
-                {
-                    boars[i].Move();
-                }
-
-                //Render();
-
+                gameObjects[0].Render();
+                gameObjects[1].Render();
             }
 
         }

@@ -6,25 +6,19 @@ using System.Threading.Tasks;
 
 namespace L20250211
 {
-    public class Goblin
+    public class Goblin : Monster
     {
-        public Goblin() { }
-        ~Goblin() { }
-
-        public int hp;
-        public int gold;
-
-        public void Attack()
+        public Goblin() 
         {
-
+            Console.WriteLine("고블린 생성자");
         }
-
-        public void Die()
+        ~Goblin() 
         {
-
+            Console.WriteLine("고블린 소멸자");
         }
+  
 
-        public void Move()
+        public override void Move()
         {
             Console.WriteLine("고블린 걷는다.");
         }
